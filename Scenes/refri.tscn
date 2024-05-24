@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv4jibbn7g8vo"]
+
+[ext_resource type="Texture2D" uid="uid://cutcd62voydue" path="res://Assets/Sprites/SpritesSheet.sprites/Refri.tres" id="2_syf6o"]
+
+[sub_resource type="GDScript" id="GDScript_4fs4p"]
+script/source = "extends Objects
+
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r6ut"]
+size = Vector2(18, 20)
+
+[node name="Refri" type="Area2D"]
+script = SubResource("GDScript_4fs4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3r6ut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_syf6o")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

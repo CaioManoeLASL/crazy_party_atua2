@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtkhstjcfjh0r"]
+
+[ext_resource type="Script" path="res://presente.gd" id="1_gfu3g"]
+[ext_resource type="Texture2D" uid="uid://dj1dpuble7xk" path="res://Assets/Sprites/SpritesSheet.sprites/presente.tres" id="2_jkofq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r6ut"]
+size = Vector2(18, 20)
+
+[node name="Presente" type="Area2D"]
+script = ExtResource("1_gfu3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3r6ut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_jkofq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
